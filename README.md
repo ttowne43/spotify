@@ -146,3 +146,53 @@ mobsf  | [INFO] 05/Nov/2025 19:19:06 - Updating Maltrail Database
 mobsf  | [INFO] 05/Nov/2025 19:19:06 - Saving to Database
 mobsf  | [INFO] 05/Nov/2025 19:33:24 - Analysis is already Done. Fetching data from the DB...
 ```
+## Prep android emulator for MOBSF DAST scan 
+
+Use AndroidStudio to create emulator then prep docker network for the emulator
+
+```shell
+./start_avd.sh Pixel_3_XL 5556 /home/ttow/Downloads/open_gapps-x86-9.0-mini-20220503.zip 
+Starting AVD Pixel_3_XL on port 5556
+Waiting for emulator to boot...
+Warning: socat is not installed. Skipping port forwarding with socat. This might be required for docker in Linux.
+Installing PlayStore
+Archive:  /home/ttow/Downloads/open_gapps-x86-9.0-mini-20220503.zip
+signed by SignApk
+ extracting: ./play/Core/backuprestore-all.tar.lz  
+ extracting: ./play/Core/carriersetup-all.tar.lz  
+ extracting: ./play/Core/configupdater-all.tar.lz  
+ extracting: ./play/Core/datatransfertool-all.tar.lz  
+ extracting: ./play/Core/defaultetc-common.tar.lz  
+ extracting: ./play/Core/defaultframework-common.tar.lz  
+ extracting: ./play/Core/extservicesgoogle-all.tar.lz  
+ extracting: ./play/Core/extsharedgoogle-all.tar.lz  
+ extracting: ./play/Core/gmscore-x86.tar.lz  
+ extracting: ./play/Core/googlebackuptransport-all.tar.lz  
+ extracting: ./play/Core/googlecontactssync-all.tar.lz  
+ extracting: ./play/Core/googlefeedback-all.tar.lz  
+ extracting: ./play/Core/googleonetimeinitializer-all.tar.lz  
+ extracting: ./play/Core/googlepartnersetup-all.tar.lz  
+ extracting: ./play/Core/gsfcore-all.tar.lz  
+ extracting: ./play/Core/setupwizarddefault-all.tar.lz  
+ extracting: ./play/Core/setupwizardtablet-all.tar.lz  
+ extracting: ./play/Core/vending-x86.tar.lz  
+/home/ttow/Android/Sdk/platform-tools/adb
+play
+Waiting for the emulator to be ready...
+Press enter to continue
+Installing PlayStore components
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+restarting adbd as root
+remount started
+remount succeeded
+Press enter to continue
+remount succeeded
+Press enter to continue
+play/etc/: 10 files pushed, 0 skipped. 1.6 MB/s (104513 bytes in 0.064s)
+play/framework/: 2 files pushed, 0 skipped. 3.5 MB/s (210982 bytes in 0.057s)
+play/app/: 2 files pushed, 0 skipped. 25.4 MB/s (1640243 bytes in 0.062s)
+play/priv-app/: 12 files pushed, 0 skipped. 237.3 MB/s (203418394 bytes in 0.818s)
+PlayStore installed successfully
+
+```

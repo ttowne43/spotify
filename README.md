@@ -15,8 +15,7 @@ ls -lh com.spotify.music.apk
 
 ## Prep mobsf
 
-To download directly from the google play store, you will first have to [obtain an AAS token](USAGE-google-play.md).
-Then,
+Run docker version of mobsf 
 
 ```shell
 ttow@tunnelmtn:~/Documents/ttow/mobsf$ docker compose up 
@@ -62,4 +61,18 @@ mobsf  | [INFO] 05/Nov/2025 18:32:58 - No updates available.
 
 ```
 
-## Start Upload and Scan 
+## Start Upload and SAST Scan 
+
+```shell
+curl -F 'file=@/home/ttow/temp/apkeep/com.spotify.music.apk' http://localhost:8000/api/v1/upload -H "Authorization: 094e3c****"
+curl -X POST --url http://archer:8000/api/v1/scan --data "scan_type=apk&file_name=com.spotify.music.apk&hash=846cdec965c3461a6a204c6f982f00ef" -H "Authorization: 094e3c****"
+curl -X POST --url http://localhost:8000/api/v1/scan --data "scan_type=apk&file_name=com.spotify.music.apk&hash=846cdec965c3461a6a204c6f982f00ef" -H "Authorization: 094e3c****"
+curl -s -X POST --url http://localhost:8000/api/v1/scorecard --data "hash=846cdec965c3461a6a204c6f982f00ef" -H "Authorization: 094e3c****" | jq '.app_name, .file_name, .version_name, .hash, .security_score'
+
+"Spotify"
+"com.spotify.music.apk"
+"9.0.90.1229"
+"846cdec965c3461a6a204c6f982f00ef"
+52
+
+```

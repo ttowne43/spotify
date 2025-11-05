@@ -196,3 +196,35 @@ play/priv-app/: 12 files pushed, 0 skipped. 237.3 MB/s (203418394 bytes in 0.818
 PlayStore installed successfully
 
 ```
+## MobSFy Android Runtime
+
+MobSF Dynamic Analyzer Supports
+• Genymotion Android VM version 4.1 - 11.0 (arm64, x86, and x86_64 upto API 30)
+• Android Emulator AVD (non production) version 5.0 - 11.0 (arm, arm64, x86, and x86_64 upto API 30)
+• Corellium Android VM (userdebug builds) version 7.1.2 - 11.0 (arm64 upto API 30)
+Android version >= 9.0 recommended
+
+```shell
+[INFO] 05/Nov/2025 21:42:01 - Connecting to Android emulator-5556
+[INFO] 05/Nov/2025 21:42:01 - Waiting for 2 seconds...
+[INFO] 05/Nov/2025 21:42:19 - MobSFying Android instance
+[INFO] 05/Nov/2025 21:42:20 - ADB Restarted
+[INFO] 05/Nov/2025 21:42:20 - Waiting for 2 seconds...
+[INFO] 05/Nov/2025 21:42:22 - Connecting to Android emulator-5556
+[INFO] 05/Nov/2025 21:42:23 - Waiting for 2 seconds...
+[INFO] 05/Nov/2025 21:42:25 - Restarting ADB Daemon as root
+[INFO] 05/Nov/2025 21:42:25 - Waiting for 2 seconds...
+[INFO] 05/Nov/2025 21:42:27 - Reconnecting to Android Device
+[INFO] 05/Nov/2025 21:42:27 - Waiting for 2 seconds...
+[INFO] 05/Nov/2025 21:42:30 - Found Android Studio Emulator
+[INFO] 05/Nov/2025 21:42:30 - Remounting
+[INFO] 05/Nov/2025 21:42:30 - Performing System check
+[INFO] 05/Nov/2025 21:42:30 - Android API Level identified as 28
+[INFO] 05/Nov/2025 21:42:31 - Android Version identified as 9.0
+[INFO] 05/Nov/2025 21:42:31 - Android OS architecture identified as x86
+[INFO] 05/Nov/2025 21:42:32 - Downloading binary frida-server-17.2.17-android-x86
+[INFO] 05/Nov/2025 21:42:39 - Copying frida server for x86
+[WARNING] 05/Nov/2025 21:42:46 - mitmproxy root CA is not generated yet.
+[INFO] 05/Nov/2025 21:42:46 - MobSFying Completed!
+
+```

@@ -65,7 +65,6 @@ mobsf  | [INFO] 05/Nov/2025 18:32:58 - No updates available.
 
 ```shell
 curl -F 'file=@/home/ttow/temp/apkeep/com.spotify.music.apk' http://localhost:8000/api/v1/upload -H "Authorization: 094e3c****"
-curl -X POST --url http://archer:8000/api/v1/scan --data "scan_type=apk&file_name=com.spotify.music.apk&hash=846cdec965c3461a6a204c6f982f00ef" -H "Authorization: 094e3c****"
 curl -X POST --url http://localhost:8000/api/v1/scan --data "scan_type=apk&file_name=com.spotify.music.apk&hash=846cdec965c3461a6a204c6f982f00ef" -H "Authorization: 094e3c****"
 curl -s -X POST --url http://localhost:8000/api/v1/scorecard --data "hash=846cdec965c3461a6a204c6f982f00ef" -H "Authorization: 094e3c****" | jq '.app_name, .file_name, .version_name, .hash, .security_score'
 
@@ -75,4 +74,75 @@ curl -s -X POST --url http://localhost:8000/api/v1/scorecard --data "hash=846cde
 "846cdec965c3461a6a204c6f982f00ef"
 52
 
+```
+
+Mobsf processing ...
+
+
+```shell
+mobsf  | [INFO] 05/Nov/2025 18:42:40 - MIME Type: application/octet-stream FILE: com.spotify.music.apk
+mobsf  | [INFO] 05/Nov/2025 18:42:40 - Android APK uploaded
+mobsf  | [INFO] 05/Nov/2025 18:47:59 - Scan Hash: 846cdec965c3461a6a204c6f982f00ef
+mobsf  | [INFO] 05/Nov/2025 18:47:59 - Starting Analysis on: com.spotify.music.apk
+mobsf  | [INFO] 05/Nov/2025 18:47:59 - Generating Hashes
+mobsf  | [INFO] 05/Nov/2025 18:47:59 - Extracting APK
+mobsf  | [INFO] 05/Nov/2025 18:48:00 - Unzipping
+mobsf  | [INFO] 05/Nov/2025 18:48:00 - Parsing APK with androguard
+mobsf  | [INFO] 05/Nov/2025 18:48:01 - Extracting APK features using aapt/aapt2
+mobsf  | [INFO] 05/Nov/2025 18:48:01 - Getting Hardcoded Certificates/Keystores
+mobsf  | [INFO] 05/Nov/2025 18:48:01 - Getting AndroidManifest.xml from APK
+mobsf  | [INFO] 05/Nov/2025 18:48:01 - Converting AXML to XML with apktool
+mobsf  | [INFO] 05/Nov/2025 18:48:07 - Parsing AndroidManifest.xml
+mobsf  | [INFO] 05/Nov/2025 18:48:07 - Extracting Manifest Data
+mobsf  | [INFO] 05/Nov/2025 18:48:07 - Manifest Analysis Started
+mobsf  | [INFO] 05/Nov/2025 18:48:08 - App Link Assetlinks Check - [com.spotify.music.SpotifyMainActivity] https://spotify.test-app.link
+mobsf  | [INFO] 05/Nov/2025 18:48:08 - App Link Assetlinks Check - [com.spotify.music.SpotifyMainActivity] https://spotify-alternate.test-app.link
+mobsf  | [INFO] 05/Nov/2025 18:48:08 - App Link Assetlinks Check - [com.spotify.music.SpotifyMainActivity] https://spotify.app.link
+mobsf  | [INFO] 05/Nov/2025 18:48:08 - App Link Assetlinks Check - [com.spotify.music.SpotifyMainActivity] https://spotify-alternate.app.link
+mobsf  | [INFO] 05/Nov/2025 18:48:08 - App Link Assetlinks Check - [com.spotify.music.SpotifyMainActivity] https://spotify.link
+mobsf  | [INFO] 05/Nov/2025 18:48:08 - App Link Assetlinks Check - [com.spotify.music.SpotifyMainActivity] https://www.spotify.com
+mobsf  | [INFO] 05/Nov/2025 18:48:08 - App Link Assetlinks Check - [com.spotify.music.SpotifyMainActivity] https://auth-callback.spotify.com
+mobsf  | [WARNING] 05/Nov/2025 18:48:09 - Invalid Host: www-testing.spotify.net
+mobsf  | [INFO] 05/Nov/2025 18:48:09 - App Link Assetlinks Check - [com.spotify.payment.callback.PaymentCallbackActivity] https://www.spotify.com
+mobsf  | [INFO] 05/Nov/2025 18:48:09 - Reading Network Security config from network_security_config.xml
+mobsf  | [INFO] 05/Nov/2025 18:48:09 - Parsing Network Security config
+mobsf  | [INFO] 05/Nov/2025 18:48:09 - Performing Static Analysis on: Spotify (com.spotify.music)
+mobsf  | [INFO] 05/Nov/2025 18:48:10 - Fetching Details from Play Store: com.spotify.music
+mobsf  | [INFO] 05/Nov/2025 18:48:10 - Checking for Malware Permissions
+mobsf  | [INFO] 05/Nov/2025 18:48:10 - Fetching icon path
+mobsf  | [INFO] 05/Nov/2025 18:48:10 - Library Binary Analysis Started
+mobsf  | [INFO] 05/Nov/2025 18:48:10 - Reading Code Signing Certificate
+mobsf  | [INFO] 05/Nov/2025 18:48:11 - Getting Signature Versions
+mobsf  | [INFO] 05/Nov/2025 18:48:12 - Running APKiD 3.0.0
+mobsf  | [INFO] 05/Nov/2025 18:48:27 - Trackers Database is up-to-date
+mobsf  | [INFO] 05/Nov/2025 18:48:27 - Detecting Trackers
+mobsf  | [INFO] 05/Nov/2025 18:48:38 - Decompiling APK to Java with JADX
+mobsf  | [INFO] 05/Nov/2025 18:51:32 - Converting DEX to Smali
+mobsf  | [INFO] 05/Nov/2025 18:51:32 - Converting classes.dex to Smali Code
+mobsf  | [INFO] 05/Nov/2025 18:51:32 - Converting classes4.dex to Smali Code
+mobsf  | [INFO] 05/Nov/2025 18:51:32 - Converting classes2.dex to Smali Code
+mobsf  | [INFO] 05/Nov/2025 18:51:32 - Converting classes6.dex to Smali Code
+mobsf  | [INFO] 05/Nov/2025 18:51:32 - Converting classes7.dex to Smali Code
+mobsf  | [INFO] 05/Nov/2025 18:51:32 - Converting classes9.dex to Smali Code
+mobsf  | [INFO] 05/Nov/2025 18:51:32 - Converting classes5.dex to Smali Code
+mobsf  | [INFO] 05/Nov/2025 18:51:32 - Converting classes3.dex to Smali Code
+mobsf  | [INFO] 05/Nov/2025 18:51:32 - Converting classes8.dex to Smali Code
+mobsf  | [INFO] 05/Nov/2025 18:51:32 - Converting classes10.dex to Smali Code
+mobsf  | [INFO] 05/Nov/2025 18:51:32 - Code Analysis Started on - java_source
+mobsf  | [INFO] 05/Nov/2025 18:52:11 - Reading file contents for SAST
+mobsf  | [INFO] 05/Nov/2025 18:52:35 - Android SBOM Analysis Completed
+mobsf  | [INFO] 05/Nov/2025 18:53:26 - Android SAST Completed
+mobsf  | [INFO] 05/Nov/2025 18:53:26 - Android API Analysis Started
+mobsf  | [INFO] 05/Nov/2025 18:54:13 - Android API Analysis Completed
+mobsf  | [INFO] 05/Nov/2025 18:54:13 - Android Permission Mapping Started
+mobsf  | [INFO] 05/Nov/2025 19:18:48 - Extracting String data from APK
+mobsf  | [INFO] 05/Nov/2025 19:18:49 - Extracting String data from Code
+mobsf  | [INFO] 05/Nov/2025 19:18:49 - Extracting String values and entropies from Code
+mobsf  | [INFO] 05/Nov/2025 19:19:02 - Starting Firebase Analysis
+mobsf  | [INFO] 05/Nov/2025 19:19:02 - Looking for Firebase URL(s)
+mobsf  | [INFO] 05/Nov/2025 19:19:03 - Checking for Firebase Remote Config
+mobsf  | [INFO] 05/Nov/2025 19:19:06 - Maltrail Database is outdated!
+mobsf  | [INFO] 05/Nov/2025 19:19:06 - Updating Maltrail Database
+mobsf  | [INFO] 05/Nov/2025 19:19:06 - Saving to Database
+mobsf  | [INFO] 05/Nov/2025 19:33:24 - Analysis is already Done. Fetching data from the DB...
 ```

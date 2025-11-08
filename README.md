@@ -252,3 +252,6 @@ Android version >= 9.0 recommended
 [INFO] 05/Nov/2025 21:42:46 - MobSFying Completed!
 
 ```
+
+## MOBSF DAST example
+![](https://github.com/ttowne43/spotify/blob/main/Screenshot%20from%202025-11-08%2008-44-55.png)

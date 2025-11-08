@@ -17,7 +17,28 @@ ls -lh com.spotify.music.apk
 
 Run docker version of mobsf 
 
-```shell
+1. **Create a `docker-compose.yml` file **:
+
+```yaml
+services:
+  mobsf:
+    image: "opensecurity/mobile-security-framework-mobsf:latest"
+    #build: Mobile-Security-Framework-MobSF/.
+    container_name: mobsf
+    volumes:
+      - /home/ttow/docker/volumes/mobsf:/home/mobsf/.MobSF
+    ports:
+      - "8000:8000"
+      - "1337:1337"
+    network_mode: host
+    user: 9901:9901
+    environment: 
+      - MOBSF_ANALYZER_IDENTIFIER=0.0.0.0:5556
+```
+
+2. **Start MOBSF**:
+
+```bash
 ttow@tunnelmtn:~/Documents/ttow/mobsf$ docker compose up 
 [+] Running 1/1
  ✔ Container mobsf  Created                                                                                                                      0.0s 

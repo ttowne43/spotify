@@ -1,5 +1,8 @@
 # Spotify APK and API testing
 
+## API testing with OpenApi spec file https://developer.spotify.com/reference/web-api/open-api-schema.yaml
+![](https://github.com/ttowne43/spotify/blob/main/Screenshot%20from%202025-11-05%2011-03-13.png)
+
 ## Prep apkeep and download Spotify APK file 
 
 The simplest example is to download a single APK to the current directory:
@@ -82,7 +85,7 @@ mobsf  | [INFO] 05/Nov/2025 18:32:58 - No updates available.
 
 ```
 
-## Start Upload and SAST Scan 
+## Start Upload and SAST Scan of APK file
 
 ```shell
 curl -F 'file=@/home/ttow/temp/apkeep/com.spotify.music.apk' http://localhost:8000/api/v1/upload -H "Authorization: 094e3c****"
